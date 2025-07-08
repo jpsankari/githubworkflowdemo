@@ -10,7 +10,9 @@ provider "aws" {
   region = "ap-southeast-1"
 }
 
+/*
 resource "aws_s3_bucket" "example" {
   bucket = "sankaris3bucket-1234567"  # Change to a globally unique name
   acl    = "private"
 }
+*/
