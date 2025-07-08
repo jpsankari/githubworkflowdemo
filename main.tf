@@ -11,12 +11,6 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "example" {
-  bucket = "sankaris3bucket-123456"  # Change to a globally unique name
+  bucket = "sankaris3bucket-1234567"  # Change to a globally unique name
   acl    = "private"
-}
-
-resource "aws_s3_bucket" "example" {
-  bucket        = "sankaris3bucket-123456"
-  acl           = "private"
-  force_destroy = true  # Automatically delete all objects in the bucket
 }
