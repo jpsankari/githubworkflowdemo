@@ -1,4 +1,4 @@
-terraform {
+/*terraform {
   backend "s3" {
     bucket = "sankaris3bucket"       # Replace with your existing bucket name
     key    = "terraform.tfstate"
