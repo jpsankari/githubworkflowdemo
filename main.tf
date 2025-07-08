@@ -1,18 +1,16 @@
 terraform {
-  required_version = ">= 1.0.0"
-
   backend "s3" {
-    bucket         = "my-terraform-tfstate-bucket"
-    key            = "global/s3/terraform.tfstate"
-    region         = "ap-southeast-1"
-    encrypt        = true
-    dynamodb_table = "terraform-locks"
+    bucket = "sankaris3bucket"       # Replace with your existing bucket name
+    key    = "terraform.tfstate"
+    region = "ap-southeast-1"
   }
+}
 
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
+provider "aws" {
+  region = "ap-southeast-1"
+}
+
+resource "aws_s3_bucket" "example" {
+  bucket = "sankaris3bucket-123456"  # Change to a globally unique name
+  acl    = "private"
 }
